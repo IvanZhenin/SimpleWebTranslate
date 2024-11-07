@@ -1,9 +1,86 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
+<form class="text-center" method="post">
+	<div>
+		<label asp-for="LanguageFrom">С языка</label>
+		<select asp-for="LanguageFrom" id="languageFrom" onchange="updateSelectOptions()">
+			<option value="" selected hidden></option>
+			<option value="GE">Немецкий</option>
+			<option value="EN">Английский</option>
+			<option value="ES">Испанский</option>
+			<option value="RU">Русский</option>
+			<option value="RO">Румынский</option>
+		</select>
+	</div>
+
+	<div>
+		<label asp-for="LanguageTo">На язык</label>
+		<select asp-for="LanguageTo" id="languageTo" onchange="updateSelectOptions()">
+			<option value="" selected hidden></option>
+			<option value="GE">Немецкий</option>
+			<option value="EN">Английский</option>
+			<option value="ES">Испанский</option>
+			<option value="RU">Русский</option>
+			<option value="RO">Румынский</option>
+		</select>
+	</div>
+
+	<div>
+		<label asp-for="SourceText">Введите текст:</label>
+		<input asp-for="SourceText" />
+		<span asp-validation-for="SourceText" class="text-danger"></span>
+	</div>
+
+	<div>
+		<label>Переведенный текст:</label>
+		<input type="text" value="@Model.TranslatedText" readonly />
+	</div>
+
+	<div class="validation-summary-errors">
+		<span asp-validation-summary="All" class="text-danger"></span>
+	</div>
+
+	<button type="submit">Перевести</button>
+</form>
+
+<script>
+	function updateSelectOptions() {
+		const languageFrom = document.getElementById("languageFrom");
+		const languageTo = document.getElementById("languageTo");
+
+		const fromValue = languageFrom.value;
+		const toValue = languageTo.value;
+
+		Array.from(languageFrom.options).forEach(option => {
+			if (option.value === toValue) {
+				option.disabled = true;
+			} else {
+				option.disabled = false;
+			}
+		});
+
+		Array.from(languageTo.options).forEach(option => {
+			if (option.value === fromValue) {
+				option.disabled = true;
+			} else {
+				option.disabled = false;
+			}
+		});
+	}
+
+	window.onload = function () {
+		const languageFrom = document.getElementById("languageFrom");
+		const languageTo = document.getElementById("languageTo");
+
+		if (languageFrom.selectedIndex === 0) {
+			languageFrom.selectedIndex = 2;
+		}
+
+		if (languageTo.selectedIndex === 0) {
+			languageTo.selectedIndex = 4;
+		}
+
+		updateSelectOptions();
+	};
+</script>

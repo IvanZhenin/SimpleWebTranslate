@@ -33,6 +33,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "D:\\Program Files (x86)\\Cpp Projects\\SimpleTranslate\\TranslateDataBase\\TranslateDataBase.csproj": {
+                "projectPath": "D:\\Program Files (x86)\\Cpp Projects\\SimpleTranslate\\TranslateDataBase\\TranslateDataBase.csproj"
+              },
               "D:\\Program Files (x86)\\Cpp Projects\\SimpleTranslate\\TranslationLibrary\\TranslationLibrary.csproj": {
                 "projectPath": "D:\\Program Files (x86)\\Cpp Projects\\SimpleTranslate\\TranslationLibrary\\TranslationLibrary.csproj"
               }

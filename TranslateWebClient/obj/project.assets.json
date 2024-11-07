@@ -1147,6 +1147,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Grpc.AspNetCore": "2.57.0",
+          "TranslateDataBase": "1.0.0",
           "TranslationLibrary": "1.0.0"
         },
         "compile": {
