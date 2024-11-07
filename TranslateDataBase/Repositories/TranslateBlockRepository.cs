@@ -12,7 +12,7 @@ namespace TranslateDataBase.Repositories
 			_context = context;
 		}
 
-		public async Task AddNewTranslateBlockAsync(string sourceText,
+		public async Task<string> AddNewTranslateBlockAsync(string sourceText,
 			string translateFromLanguage,
 			string translateToLanguage,
 			string resultText)
@@ -25,8 +25,16 @@ namespace TranslateDataBase.Repositories
 				ResultText = resultText,
 			};
 
-			await _context.TranslateBlocks.AddAsync(translateBlock);
-			await _context.SaveChangesAsync();
+			try
+			{
+				await _context.TranslateBlocks.AddAsync(translateBlock);
+				await _context.SaveChangesAsync();
+				return "Запись успешно сохранена в базу данных";
+			}
+			catch (Exception ex)
+			{
+				return $"Ошибка при сохранении блока перевода: {ex.Message}";
+			}
 		}
 	}
 }
