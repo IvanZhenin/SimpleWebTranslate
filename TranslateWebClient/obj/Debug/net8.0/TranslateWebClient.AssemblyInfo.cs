@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TranslateWebClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18411f23ea4e6d78715a6b266e7db39bcd8b0b9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b328b78f7d36b8dd625551925c273b456ee26dde")]
 [assembly: System.Reflection.AssemblyProductAttribute("TranslateWebClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TranslateWebClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

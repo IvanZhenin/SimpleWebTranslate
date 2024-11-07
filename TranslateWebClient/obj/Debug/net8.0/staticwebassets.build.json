@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wBNJJ3ebxgBquTuTQmWNwLfYolzUPdymRJpzz7WE8f0=",
+  "Hash": "0emXh1gyJMHhqYpFBUAtRNRxYwJbpq7/4KfHAf26mwE=",
   "Source": "TranslateWebClient",
   "BasePath": "_content/TranslateWebClient",
   "Mode": "Default",
@@ -84,6 +84,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\Program Files (x86)\\Cpp Projects\\SimpleTranslate\\TranslateWebClient\\wwwroot\\css\\translate.css",
+      "SourceId": "TranslateWebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Program Files (x86)\\Cpp Projects\\SimpleTranslate\\TranslateWebClient\\wwwroot\\",
+      "BasePath": "_content/TranslateWebClient",
+      "RelativePath": "css/translate.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\translate.css"
     },
     {
       "Identity": "D:\\Program Files (x86)\\Cpp Projects\\SimpleTranslate\\TranslateWebClient\\wwwroot\\favicon.ico",

@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "D:\\Program Files (x86)\\Cpp Projects\\SimpleTranslate\\TranslateWebClient\\wwwroot\\css\\translate.css",
+      "PackagePath": "staticwebassets\\css\\translate.css"
+    },
+    {
       "Id": "D:\\Program Files (x86)\\Cpp Projects\\SimpleTranslate\\TranslateWebClient\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

@@ -62,13 +62,13 @@ namespace TranslateWebClient.Pages
 			}
 			catch (RpcException ex)
 			{
-				_logger.LogError(ex, "Translation service is unavailable");
-				TranslatedText = "Translation service is unavailable";
+				_logger.LogError(ex, "Сервис перевода недоступен");
+				TranslatedText = "*Сервис перевода недоступен*";
 			}
 			catch (Exception ex)
 			{
-				_logger.LogError(ex, "An unexpected error occurred during translation");
-				TranslatedText = "An unexpected error occurred";
+				_logger.LogError(ex, "Произошла непредвиденная ошибка во время перевода");
+				TranslatedText = "*Произошла непредвиденная ошибка во время перевода*";
 			}
 
 			return Page();

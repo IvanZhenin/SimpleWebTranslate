@@ -1,48 +1,52 @@
 ﻿@page
 @model IndexModel
 
-<form class="text-center" method="post">
-	<div>
-		<label asp-for="LanguageFrom">С языка</label>
-		<select asp-for="LanguageFrom" id="languageFrom" onchange="updateSelectOptions()">
-			<option value="" selected hidden></option>
-			<option value="GE">Немецкий</option>
-			<option value="EN">Английский</option>
-			<option value="ES">Испанский</option>
-			<option value="RU">Русский</option>
-			<option value="RO">Румынский</option>
-		</select>
-	</div>
+<link rel="stylesheet" href="~/css/translate.css" />
 
-	<div>
-		<label asp-for="LanguageTo">На язык</label>
-		<select asp-for="LanguageTo" id="languageTo" onchange="updateSelectOptions()">
-			<option value="" selected hidden></option>
-			<option value="GE">Немецкий</option>
-			<option value="EN">Английский</option>
-			<option value="ES">Испанский</option>
-			<option value="RU">Русский</option>
-			<option value="RO">Румынский</option>
-		</select>
-	</div>
+<div class="form-container">
+	<form class="translation-form" method="post">
+		<div>
+			<label asp-for="LanguageFrom">С языка</label>
+			<select asp-for="LanguageFrom" id="languageFrom" onchange="updateSelectOptions()">
+				<option value="" selected hidden></option>
+				<option value="GE">Немецкий</option>
+				<option value="EN">Английский</option>
+				<option value="ES">Испанский</option>
+				<option value="RU">Русский</option>
+				<option value="RO">Румынский</option>
+			</select>
+		</div>
 
-	<div>
-		<label asp-for="SourceText">Введите текст:</label>
-		<input asp-for="SourceText" />
-		<span asp-validation-for="SourceText" class="text-danger"></span>
-	</div>
+		<div>
+			<label asp-for="LanguageTo">На язык</label>
+			<select asp-for="LanguageTo" id="languageTo" onchange="updateSelectOptions()">
+				<option value="" selected hidden></option>
+				<option value="GE">Немецкий</option>
+				<option value="EN">Английский</option>
+				<option value="ES">Испанский</option>
+				<option value="RU">Русский</option>
+				<option value="RO">Румынский</option>
+			</select>
+		</div>
 
-	<div>
-		<label>Переведенный текст:</label>
-		<input type="text" value="@Model.TranslatedText" readonly />
-	</div>
+		<div>
+			<label asp-for="SourceText">Введите текст:</label>
+			<textarea asp-for="SourceText" class="form-control auto-expand"></textarea>
+			<span asp-validation-for="SourceText" class="text-danger"></span>
+		</div>
 
-	<div class="validation-summary-errors">
-		<span asp-validation-summary="All" class="text-danger"></span>
-	</div>
+		<div>
+			<label>Переведенный текст:</label>
+			<textarea readonly class="form-control auto-expand">@Model.TranslatedText</textarea>
+		</div>
 
-	<button type="submit">Перевести</button>
-</form>
+		<div class="validation-summary-errors">
+			<span asp-validation-summary="All" class="text-danger"></span>
+		</div>
+
+		<button type="submit" class="btn-submit">Перевести</button>
+	</form>
+</div>
 
 <script>
 	function updateSelectOptions() {
@@ -68,6 +72,13 @@
 			}
 		});
 	}
+
+	document.querySelectorAll('.auto-expand').forEach(textarea => {
+		textarea.addEventListener('input', event => {
+			textarea.style.height = 'auto';
+			textarea.style.height = `${textarea.scrollHeight}px`;
+		});
+	});
 
 	window.onload = function () {
 		const languageFrom = document.getElementById("languageFrom");
