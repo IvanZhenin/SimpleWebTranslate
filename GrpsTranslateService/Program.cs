@@ -1,4 +1,7 @@
 using GrpsTranslateService.Services;
+using Microsoft.EntityFrameworkCore;
+using TranslateDataBase.Repositories;
+using TranslateDataBase;
 
 namespace GrpsTranslateService
 {
@@ -7,6 +10,11 @@ namespace GrpsTranslateService
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
+
+			builder.Services.AddDbContext<TranslateDbContext>(options =>
+				options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnect")));
+			builder.Services.AddScoped<TranslateBlockRepository>();
+			builder.Logging.AddFilter("Microsoft.EntityFrameworkCore.Database.Command", LogLevel.Warning);
 
 			// Add services to the container.
 			builder.Services.AddGrpc();

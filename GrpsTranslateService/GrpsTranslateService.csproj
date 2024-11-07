@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\translate.proto" GrpcServices="Server" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TranslateDataBase\TranslateDataBase.csproj" />
     <ProjectReference Include="..\TranslationLibrary\TranslationLibrary.csproj" />
   </ItemGroup>
 
