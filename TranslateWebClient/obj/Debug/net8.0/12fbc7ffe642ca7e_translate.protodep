@@ -1,0 +1,2 @@
+obj\Debug\net8.0\Protos/Translate.cs \
+obj\Debug\net8.0\Protos/TranslateGrpc.cs: Protos/translate.proto
