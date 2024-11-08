@@ -1,4 +1,6 @@
-﻿using System.Web;
+﻿using System.Text.Json;
+using System.Text.RegularExpressions;
+using System.Web;
 
 namespace TranslationLibrary
 {
@@ -18,8 +20,16 @@ namespace TranslationLibrary
 				try
 				{
 					var result = await httpClient.GetStringAsync(url);
-					result = result.Substring(4, result.IndexOf("\"", 4, StringComparison.Ordinal) - 4);
-					return result;
+
+					using (var json = JsonDocument.Parse(result))
+					{
+						var translations = json.RootElement[0];
+						var translatedText = string.Join(" ", translations.EnumerateArray().Select(t => t[0].GetString()));
+
+						translatedText = Regex.Replace(translatedText, @"(?<=[.!?])\s+", " ");
+
+						return translatedText;
+					}
 				}
 				catch
 				{
