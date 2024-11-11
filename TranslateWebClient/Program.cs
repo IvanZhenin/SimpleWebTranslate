@@ -10,10 +10,6 @@ namespace TranslateWebClient
 		{
 			var builder = WebApplication.CreateBuilder(args);
 
-			builder.Services.AddDbContext<TranslateDbContext>(options =>
-				options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnect")));
-			builder.Services.AddScoped<TranslateBlockRepository>();
-
 			// Add services to the container.
 			builder.Services.AddRazorPages();
 

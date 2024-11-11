@@ -11,12 +11,10 @@ namespace TranslateWebClient.Pages
 	public class IndexModel : PageModel
 	{
 		private readonly ILogger<IndexModel> _logger;
-		private readonly TranslateBlockRepository _repository;
 
-		public IndexModel(ILogger<IndexModel> logger, TranslateBlockRepository repository)
+		public IndexModel(ILogger<IndexModel> logger)
 		{
 			_logger = logger;
-			_repository = repository;
 		}
 
 		[BindProperty]
