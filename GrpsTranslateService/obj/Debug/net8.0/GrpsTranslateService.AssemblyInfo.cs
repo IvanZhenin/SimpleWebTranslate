@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GrpsTranslateService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18411f23ea4e6d78715a6b266e7db39bcd8b0b9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e529c223a01a4f485449dbe23d50756ff3c4f039")]
 [assembly: System.Reflection.AssemblyProductAttribute("GrpsTranslateService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GrpsTranslateService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

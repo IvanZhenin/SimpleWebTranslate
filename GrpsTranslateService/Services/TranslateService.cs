@@ -11,10 +11,12 @@ namespace GrpsTranslateService.Services
 		private readonly ILogger<TranslateService> _logger;
 		private readonly ITranslateService _translateService;
 		private readonly TranslateBlockRepository _repository;
-		public TranslateService(ILogger<TranslateService> logger, TranslateBlockRepository repository)
+		public TranslateService(ILogger<TranslateService> logger, 
+			ITranslateService translateService,
+            TranslateBlockRepository repository)
 		{
 			_logger = logger;
-			_translateService = new GoogleTranslateService();
+			_translateService = translateService;
 			_repository = repository;
 		}
 
