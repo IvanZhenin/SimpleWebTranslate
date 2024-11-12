@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "RestTranslateService.Controllers.TranslateController",
+    "Method": "Translate",
+    "RelativePath": "api/Translate/translate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RestTranslateService.Model.TranslateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
