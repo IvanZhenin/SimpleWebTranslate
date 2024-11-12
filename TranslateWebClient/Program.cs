@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TranslateDataBase.Repositories;
 using TranslateDataBase;
+using Grpc.Net.Client;
+using GrpcServiceTest;
 
 namespace TranslateWebClient
 {
@@ -10,8 +12,19 @@ namespace TranslateWebClient
 		{
 			var builder = WebApplication.CreateBuilder(args);
 
-			// Add services to the container.
-			builder.Services.AddRazorPages();
+            builder.Services.AddHttpClient("RestTranslateService", client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:7194/");
+            });
+
+            builder.Services.AddSingleton(services =>
+            {
+                var grpcChannel = GrpcChannel.ForAddress("https://localhost:7028");
+                return new Translate.TranslateClient(grpcChannel);
+            });
+
+            // Add services to the container.
+            builder.Services.AddRazorPages();
 
 			var app = builder.Build();
 

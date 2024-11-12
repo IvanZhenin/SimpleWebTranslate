@@ -6,6 +6,14 @@
 <div class="form-container">
 	<form class="translation-form" method="post">
 		<div>
+			<label asp-for="ChoosedService">Выберите сервис перевода</label>
+			<select asp-for="ChoosedService" id="choosedService">
+				<option value="gRPC" selected>gRPC</option>
+				<option value="REST">REST</option>
+			</select>
+			<span asp-validation-for="ChoosedService" class="text-danger"></span>
+		</div>
+		<div>
 			<label asp-for="LanguageFrom">С языка</label>
 			<select asp-for="LanguageFrom" id="languageFrom" onchange="updateSelectOptions()">
 				<option value="" selected hidden></option>
